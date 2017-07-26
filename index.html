@@ -8,10 +8,19 @@
     <meta name="author" content="Zia">
     <meta name="description" content="Wikipedia Viewer Application which takes search keywords via simple input box, and returns related records from Wikipedia.">
     <title>Wikipedia-Viewer-Applicaation</title>
-   <link rel="stylesheet" href="resources/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-
+    <div class="search-box">
+        <div class="search-icon"></div>
+         <div class="form">
+            <form>
+                <input type="text" name="wikiSearch" placeholder="What are you looking for?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What are you looking for?'">
+            </form>
+        </div>
+    </div>
+<script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/js/main.js"></script>
 </body>
 </html>
