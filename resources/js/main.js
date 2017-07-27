@@ -21,8 +21,8 @@ $(document).ready(function(){
         e.preventDefault();
         var inputWiki = $('#inputWiki').val();
         var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+inputWiki+'&format=json&callback=?';
-    
-        $.ajax({
+        if(inputWiki) {
+            $.ajax({
             type:'GET',
             url: url, 
             async: false,
@@ -44,14 +44,16 @@ $(document).ready(function(){
                     </div>
                 </div>
             `);
-
             }
-            
+                $('#wikiSearchResult').append(`<button class='btn btn-primary'>Home</button>`);
             },
             error: function(error){
                 console.log('Error');
             }
         });
+        }else {
+            $('#inputWiki').attr("placeholder", "Input field must not be empty");
+        }
     });
 });
 
