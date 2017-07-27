@@ -6,14 +6,14 @@ $(document).ready(function(){
 
     // Add Default Template
     $('#wikiSearchResult').html(`
-        <div class="jumbotron welcome">
-            <h1>Wikipedia Viewer Applicaation</h1>
-            <p class="lead">
-                Welcome to Wikipedia Viewer Application! Search for a keyword, and get detail information from Wikipedia.
-            </p>
-            <p>Want to check Wikipedia random articles?</p>
-            <a class="btn btn-primary" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Random Article</a>
-        </div>
+            <div class="jumbotron welcome">
+                <h1>Wikipedia Viewer Applicaation</h1>
+                <p class="lead">
+                    Welcome to Wikipedia Viewer Application! Search for a keyword, and get detail information from Wikipedia.
+                </p>
+                <p>Want to check Wikipedia random articles?</p>
+                <a class="btn btn-primary" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Random Article</a>
+            </div>
         `);
 
     // Submit Button Click Event
@@ -34,7 +34,8 @@ $(document).ready(function(){
 
             for(var i=0; i<result[1].length; i++) {
                 $('#wikiSearchResult').append(`
-                <div class="col-sm-10 mb-2">
+                <div class="row justify-content-start">
+                <div class="col-10 offset-md-1 mb-2">
                     <div class="card">
                         <div class="card-block">
                             <h3 class="card-title">`+result[1][i]+`</h3>
@@ -43,9 +44,18 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
+                </div>
             `);
             }
-                $('#wikiSearchResult').append(`<button class='btn btn-primary'>Home</button>`);
+                $('#wikiSearchResult').append(`
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-10 offset-md-1 mb-2 gotoHome">
+                            <button onclick="gotoHome()" id="gotoHome" class='btn btn-primary'>Home</button>
+                        </div>
+                    </div>
+                </div>
+                `);
             },
             error: function(error){
                 console.log('Error');
@@ -72,3 +82,18 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 /* GOTO TOP BUTTON END */
+
+/* GOTO HOMW BUTTON START */
+function gotoHome(){
+    $('#wikiSearchResult').html(`
+            <div class="jumbotron welcome">
+                <h1>Wikipedia Viewer Applicaation</h1>
+                <p class="lead">
+                    Welcome to Wikipedia Viewer Application! Search for a keyword, and get detail information from Wikipedia.
+                </p>
+                <p>Want to check Wikipedia random articles?</p>
+                <a class="btn btn-primary" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Random Article</a>
+            </div>
+        `);
+}
+/* GOTO HOMW BUTTON END */
