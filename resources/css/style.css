@@ -123,23 +123,30 @@ body {
 /* ========================
     GOTO TOP START
 ==========================*/
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+#gotoTop {
+    display: none;
+    position: fixed;
+    width: 4em;
+    height: 4em;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background: linear-gradient(-45deg, rgb(233, 30, 99) 50%, transparent 50%);
+    background: rgb(233, 30, 99);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 0 0 2em 0;
+    margin: 0.2em 2.5em;
+	transform: rotate(45deg);
 }
+#gotoTop:nth-child(1) {transform: rotate(45deg) skewX(5deg) skewY(5deg);}
+#gotoTop:nth-child(3) {transform: rotate(45deg) skewX(-5deg) skewY(-5deg);}
 
-#myBtn:hover {
-  background-color: #555;
+#gotoTop:hover {
+    background-color: #555;
 }
 /* ========================
     GOTO TOP END
